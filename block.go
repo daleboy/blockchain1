@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-//Block 包含关键信息的区块结构
+//Block 包含关键信息的区块结构,简化版
 type Block struct {
 	Timestamp     int64  //当前时间戳
 	Data          []byte //区块存储的实际有效信息
