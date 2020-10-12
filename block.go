@@ -23,7 +23,7 @@ func (b *Block) SetHash() {
 	//整形不可以直接转为二进制，需要先转为字符串
 	timestamp := []byte(strconv.FormatInt(b.Timestamp, 10)) //先转为10进制然后以字符串形式返回后强制转为二进制
 	headers := bytes.Join([][]byte{b.PrevBlockHash, b.Data, timestamp}, []byte{})
-	hash := sha256.Sum256(headers)
+	hash := sha256.Sum256(headers) //计算256位哈希
 	b.Hash = hash[:]
 }
 
